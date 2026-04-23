@@ -1,0 +1,26 @@
+name: Latest book list from Goodreads
+
+on:
+  schedule:
+    # Roda a cada hora
+    - cron: "0 * * * *"
+  # Permite rodar manualmente pela aba Actions
+  workflow_dispatch:
+
+jobs:
+  update-readme-with-goodreads-books:
+    name: Update README with currently reading books
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: zwacky/goodreads-profile-workflow@main
+        with:
+          # Substitua pelo seu Goodreads User ID
+          # (pegue na URL quando você acessa "My Books" no Goodreads)
+          goodreads_user_id: "180765643"
+          # Qual prateleira mostrar (outras opções: "read", "to-read")
+          shelf: "currently-reading"
+          # Quantos livros no máximo
+          max_entries: 5
