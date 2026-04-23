@@ -11,12 +11,11 @@ Python · Node.js · TypeScript · PostgreSQL · Docker · Claude
 
 #### 🌱 What I'm learning
 
-Go, mostly through Boot.dev — concurrency, stdlib, and the general philosophy of writing boring code that just works.
-Software architecture fundamentals — revisiting the classics and sharpening how I reason about systems.
-Working effectively with Claude — prompt patterns, agentic workflows, and figuring out where LLMs actually earn their keep in day-to-day engineering.
+- **Go**, mostly through [Boot.dev](https://www.boot.dev) — concurrency, stdlib, and the general philosophy of writing boring code that just works.
+- **Software architecture fundamentals** — revisiting the classics and sharpening how I reason about systems.
+- **Working effectively with Claude** — prompt patterns, agentic workflows, and figuring out where LLMs actually earn their keep in day-to-day engineering.
 
 #### 📚 Books I'm currently reading
-
 <!-- GOODREADS-LIST:START -->
 - [Crime e Castigo](https://www.goodreads.com/review/show/8545512409?utm_medium=api&utm_source=rss) by Fyodor Dostoevsky (⭐️4.55)
 - [FUNDAMENTOS DA ARQUITETURA DE SOFTWARE - VOL. 1](https://www.goodreads.com/review/show/8545507184?utm_medium=api&utm_source=rss) by Mark Richards (⭐️3.9)
