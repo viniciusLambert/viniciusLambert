@@ -18,6 +18,8 @@ Working effectively with Claude — prompt patterns, agentic workflows, and figu
 #### 📚 Books I'm currently reading
 
 <!-- GOODREADS-LIST:START -->
+- [Crime e Castigo](https://www.goodreads.com/review/show/8545512409?utm_medium=api&utm_source=rss) by Fyodor Dostoevsky (⭐️4.55)
+- [FUNDAMENTOS DA ARQUITETURA DE SOFTWARE - VOL. 1](https://www.goodreads.com/review/show/8545507184?utm_medium=api&utm_source=rss) by Mark Richards (⭐️3.9)
 <!-- GOODREADS-LIST:END -->
 
 You can also check my [Goodreads profile](https://www.goodreads.com/user/show/180765643) for the full list.
