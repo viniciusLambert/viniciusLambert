@@ -17,7 +17,7 @@ Python · Node.js · TypeScript · PostgreSQL · Docker · Claude
 
 #### 📚 Books I'm currently reading
 <!-- GOODREADS-LIST:START -->
-- [Crime e Castigo](https://www.goodreads.com/review/show/8545512409?utm_medium=api&utm_source=rss) by Fyodor Dostoevsky (⭐️4.55)
+- [A Guerra dos Chips: O Combate pela tecnologia mais crucial do mundo](https://www.goodreads.com/review/show/8623031840?utm_medium=api&utm_source=rss) by Chris   Miller (⭐️4.45)
 - [FUNDAMENTOS DA ARQUITETURA DE SOFTWARE - VOL. 1](https://www.goodreads.com/review/show/8545507184?utm_medium=api&utm_source=rss) by Mark Richards (⭐️3.9)
 <!-- GOODREADS-LIST:END -->
 
