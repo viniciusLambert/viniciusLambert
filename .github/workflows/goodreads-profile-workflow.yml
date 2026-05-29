@@ -4,7 +4,6 @@ on:
   schedule:
     # Roda a cada hora
     - cron: "0 * * * *"
-  # Permite rodar manualmente pela aba Actions
   workflow_dispatch:
 
 jobs:
@@ -15,12 +14,75 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: zwacky/goodreads-profile-workflow@main
-        with:
-          # Substitua pelo seu Goodreads User ID
-          # (pegue na URL quando você acessa "My Books" no Goodreads)
-          goodreads_user_id: "180765643"
-          # Qual prateleira mostrar (outras opções: "read", "to-read")
-          shelf: "currently-reading"
-          # Quantos livros no máximo
-          max_books_count: 5
+
+      - name: Fetch Goodreads RSS and update README
+        run: |
+          python3 - <<'EOF'
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          import re
+          import sys
+
+          USER_ID = "180765643"
+          SHELF = "currently-reading"
+          MAX_BOOKS = 5
+          README = "./README.md"
+          TAG = "GOODREADS-LIST"
+          TEMPLATE = "- [{title}]({url}) by {author} (⭐️{rating})"
+
+          url = f"https://www.goodreads.com/review/list_rss/{USER_ID}?shelf={SHELF}"
+          req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+          try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  data = r.read()
+          except Exception as e:
+              print(f"Failed to fetch RSS: {e}", file=sys.stderr)
+              sys.exit(1)
+
+          root = ET.fromstring(data)
+          ns = {"gr": "https://www.goodreads.com"}
+          items = root.findall(".//item")[:MAX_BOOKS]
+
+          if not items:
+              print("No books found in feed.")
+              sys.exit(0)
+
+          def get(el, tag):
+              node = el.find(tag)
+              return node.text.strip() if node is not None and node.text else ""
+
+          lines = []
+          for item in items:
+              title = get(item, "title")
+              url_ = get(item, "link")
+              author = get(item, "author_name")
+              rating = get(item, "average_rating")
+              lines.append(TEMPLATE.format(title=title, url=url_, author=author, rating=rating))
+
+          book_list = "\n".join(lines)
+
+          with open(README, "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          start_tag = f"<!-- {TAG}:START -->"
+          end_tag = f"<!-- {TAG}:END -->"
+          pattern = rf"({re.escape(start_tag)}).*?({re.escape(end_tag)})"
+          new_readme = re.sub(pattern, rf"\1\n{book_list}\n\2", readme, flags=re.DOTALL)
+
+          if new_readme == readme:
+              print("No changes.")
+              sys.exit(0)
+
+          with open(README, "w", encoding="utf-8") as f:
+              f.write(new_readme)
+
+          print("README updated.")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "goodreads-books-bot"
+          git config user.email "goodreads-books-bot@example.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Synced and updated with user's goodreads book lists"
+          git push
