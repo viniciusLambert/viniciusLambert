@@ -23,4 +23,4 @@ jobs:
           # Qual prateleira mostrar (outras opções: "read", "to-read")
           shelf: "currently-reading"
           # Quantos livros no máximo
-          max_entries: 5
+          max_books_count: 5
