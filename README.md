@@ -3,16 +3,15 @@
 
 I'm [Vinicius](https://www.linkedin.com/in/vinicius-nascimento-lambert/), a backend developer from Brazil. I write software for a living and I'm currently learning Go on the side.
 
-Working [@SharkDev](https://github.com/sharkdev) with Python, Node.js and TypeScript, previously wrote data pipelines and ML stuff at [@AmbevTech](https://github.com/AmbevTech). Started my career writing firmware for autonomous drones.
+Working [@SharkDev](https://github.com/sharkdev) with TypeScript and python, previously wrote data pipelines and ML stuff at [@AmbevTech](https://github.com/AmbevTech). Started my career writing firmware for autonomous drones.
 
 #### 🛠️ What I use day to day
 
-Python · Node.js · TypeScript · PostgreSQL · Docker · Claude
+Go · Python · TypeScript · PostgreSQL · Docker · Claude
 
 #### 🌱 What I'm learning
 
-- **Go**, mostly through [Boot.dev](https://www.boot.dev) — concurrency, stdlib, and the general philosophy of writing boring code that just works.
-- **Software architecture fundamentals** — revisiting the classics and sharpening how I reason about systems.
+- **Software architecture** — revisiting the classics and sharpening how I reason about systems.
 - **Working effectively with Claude** — prompt patterns, agentic workflows, and figuring out where LLMs actually earn their keep in day-to-day engineering.
 
 #### 📚 Books I'm currently reading
