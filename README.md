@@ -16,9 +16,7 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 
 #### 📚 Books I'm currently reading
 <!-- GOODREADS-LIST:START -->
-- [APRENDA DOMAIN-DRIVEN DESIGN](https://www.goodreads.com/review/show/8706581064?utm_medium=api&utm_source=rss) by Vlad Khononov (⭐️4.83)
 - [Os 1000 dias do bebê: Um guia para a jornada mais importante da vida de nossos filhos, dos primeiros momentos da gestação aos primeiros anos da infância. (Portuguese Edition)](https://www.goodreads.com/review/show/8641148180?utm_medium=api&utm_source=rss) by Daniel Becker (⭐️4.57)
-- [A Guerra dos Chips: O Combate pela tecnologia mais crucial do mundo](https://www.goodreads.com/review/show/8623031840?utm_medium=api&utm_source=rss) by Chris   Miller (⭐️4.45)
 <!-- GOODREADS-LIST:END -->
 
 You can also check my [Goodreads profile](https://www.goodreads.com/user/show/180765643) for the full list.
