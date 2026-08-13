@@ -17,7 +17,7 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 #### 📚 Books I'm currently reading
 <!-- GOODREADS-LIST:START -->
 - [Arquitetura de software: as partes difíceis: análises modernas de trade-off para arquiteturas distribuídas (O’Reilly) (Portuguese Edition)](https://www.goodreads.com/review/show/8806256549?utm_medium=api&utm_source=rss) by Neal Ford (⭐️4.33)
-- [Os 1000 dias do bebê: Um guia para a jornada mais importante da vida de nossos filhos, dos primeiros momentos da gestação aos primeiros anos da infância. (Portuguese Edition)](https://www.goodreads.com/review/show/8641148180?utm_medium=api&utm_source=rss) by Daniel Becker (⭐️4.50)
+- [Os 1000 dias do bebê: Um guia para a jornada mais importante da vida de nossos filhos, dos primeiros momentos da gestação aos primeiros anos da infância. (Portuguese Edition)](https://www.goodreads.com/review/show/8641148180?utm_medium=api&utm_source=rss) by Daniel Becker (⭐️4.44)
 <!-- GOODREADS-LIST:END -->
 
 You can also check my [Goodreads profile](https://www.goodreads.com/user/show/180765643) for the full list.
