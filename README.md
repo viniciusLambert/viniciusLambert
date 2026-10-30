@@ -15,10 +15,10 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 - **Working effectively with Claude** — prompt patterns, agentic workflows, and figuring out where LLMs actually earn their keep in day-to-day engineering.
 
 #### 📚 Books I'm currently reading
-<!-- GOODREADS-LIST:START -->
+<!-- BOOKS-LIST:START -->
 - [Arquitetura de software: as partes difíceis: análises modernas de trade-off para arquiteturas distribuídas (O’Reilly) (Portuguese Edition)](https://www.goodreads.com/review/show/8806256549?utm_medium=api&utm_source=rss) by Neal Ford (⭐️4.33)
 - [Os 1000 dias do bebê: Um guia para a jornada mais importante da vida de nossos filhos, dos primeiros momentos da gestação aos primeiros anos da infância. (Portuguese Edition)](https://www.goodreads.com/review/show/8641148180?utm_medium=api&utm_source=rss) by Daniel Becker (⭐️4.44)
-<!-- GOODREADS-LIST:END -->
+<!-- BOOKS-LIST:END -->
 
 You can also check my [Goodreads profile](https://www.goodreads.com/user/show/180765643) for the full list.
 

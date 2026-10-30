@@ -1,0 +1,113 @@
+name: Currently reading from Hardcover
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-readme-with-books:
+    name: Update README with currently reading books
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Hardcover books and update README
+        env:
+          HARDCOVER_TOKEN: ${{ secrets.HARDCOVER_TOKEN }}
+        run: |
+          python3 - <<'EOF'
+          import json
+          import os
+          import re
+          import sys
+          import urllib.request
+
+          MAX_BOOKS = 5
+          CURRENTLY_READING = 2
+          README = "./README.md"
+          TAG = "BOOKS-LIST"
+          TEMPLATE = "- [{title}](https://hardcover.app/books/{slug}) by {author}{rating}"
+
+          query = """
+          query ($status: Int!, $limit: Int!) {
+            me {
+              user_books(
+                where: {status_id: {_eq: $status}}
+                order_by: {updated_at: desc}
+                limit: $limit
+              ) {
+                book {
+                  title
+                  slug
+                  rating
+                  contributions(limit: 1) { author { name } }
+                }
+              }
+            }
+          }
+          """
+
+          token = os.environ["HARDCOVER_TOKEN"].strip()
+          if not token.lower().startswith("bearer "):
+              token = f"Bearer {token}"
+
+          body = json.dumps({"query": query, "variables": {"status": CURRENTLY_READING, "limit": MAX_BOOKS}}).encode()
+          req = urllib.request.Request(
+              "https://api.hardcover.app/v1/graphql",
+              data=body,
+              headers={"Content-Type": "application/json", "Authorization": token, "User-Agent": "readme-books-bot"},
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  payload = json.load(r)
+          except Exception as e:
+              print(f"Failed to fetch Hardcover: {e}", file=sys.stderr)
+              sys.exit(1)
+
+          if payload.get("errors"):
+              print(f"Hardcover errors: {payload['errors']}", file=sys.stderr)
+              sys.exit(1)
+
+          user_books = payload["data"]["me"][0]["user_books"]
+          if not user_books:
+              print("No books found.")
+              sys.exit(0)
+
+          lines = []
+          for entry in user_books:
+              book = entry["book"]
+              contributions = book.get("contributions") or []
+              author = contributions[0]["author"]["name"] if contributions else "Unknown"
+              rating = f" (⭐️{book['rating']:.2f})" if book.get("rating") else ""
+              lines.append(TEMPLATE.format(title=book["title"], slug=book["slug"], author=author, rating=rating))
+
+          book_list = "\n".join(lines)
+
+          with open(README, "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          start_tag = f"<!-- {TAG}:START -->"
+          end_tag = f"<!-- {TAG}:END -->"
+          pattern = rf"({re.escape(start_tag)}).*?({re.escape(end_tag)})"
+          new_readme = re.sub(pattern, lambda m: f"{m.group(1)}\n{book_list}\n{m.group(2)}", readme, flags=re.DOTALL)
+
+          if new_readme == readme:
+              print("No changes.")
+              sys.exit(0)
+
+          with open(README, "w", encoding="utf-8") as f:
+              f.write(new_readme)
+
+          print("README updated.")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "books-bot"
+          git config user.email "books-bot@example.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Sync currently reading books from Hardcover"
+          git push
