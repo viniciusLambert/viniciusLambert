@@ -16,6 +16,7 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 
 #### 📚 Books I'm currently reading
 <!-- BOOKS-LIST:START -->
+- [Notes from Underground](https://hardcover.app/books/notes-from-underground-notes-from-underground-1864) by Fyodor Dostoevsky (⭐️4.09)
 - [ARQUITETURA DE SOFTWARE: AS PARTES DIFÍCEIS](https://hardcover.app/books/arquitetura-de-software) by Neal Ford (⭐️4.00)
 <!-- BOOKS-LIST:END -->
 
