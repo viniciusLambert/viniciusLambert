@@ -34,6 +34,7 @@ jobs:
           query = """
           query ($status: Int!, $limit: Int!) {
             me {
+              username
               user_books(
                 where: {status_id: {_eq: $status}}
                 order_by: {updated_at: desc}
@@ -71,7 +72,8 @@ jobs:
               print(f"Hardcover errors: {payload['errors']}", file=sys.stderr)
               sys.exit(1)
 
-          user_books = payload["data"]["me"][0]["user_books"]
+          me = payload["data"]["me"][0]
+          user_books = me["user_books"]
           if not user_books:
               print("No books found.")
               sys.exit(0)
@@ -84,6 +86,8 @@ jobs:
               rating = f" (⭐️{book['rating']:.2f})" if book.get("rating") else ""
               lines.append(TEMPLATE.format(title=book["title"], slug=book["slug"], author=author, rating=rating))
 
+          lines.append("")
+          lines.append(f"You can also check my [Hardcover profile](https://hardcover.app/@{me['username']}) for the full list.")
           book_list = "\n".join(lines)
 
           with open(README, "r", encoding="utf-8") as f:

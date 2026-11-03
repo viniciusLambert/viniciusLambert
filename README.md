@@ -20,8 +20,6 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 - [ARQUITETURA DE SOFTWARE: AS PARTES DIFÍCEIS](https://hardcover.app/books/arquitetura-de-software) by Neal Ford (⭐️4.00)
 <!-- BOOKS-LIST:END -->
 
-You can also check my [Goodreads profile](https://www.goodreads.com/user/show/180765643) for the full list.
-
 #### 📫 Where to find me
 
 - [LinkedIn](https://www.linkedin.com/in/vinicius-nascimento-lambert/)
