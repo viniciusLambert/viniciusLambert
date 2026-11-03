@@ -18,6 +18,8 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 <!-- BOOKS-LIST:START -->
 - [Notes from Underground](https://hardcover.app/books/notes-from-underground-notes-from-underground-1864) by Fyodor Dostoevsky (⭐️4.09)
 - [ARQUITETURA DE SOFTWARE: AS PARTES DIFÍCEIS](https://hardcover.app/books/arquitetura-de-software) by Neal Ford (⭐️4.00)
+
+You can also check my [Hardcover profile](https://hardcover.app/@Cambu) for the full list.
 <!-- BOOKS-LIST:END -->
 
 #### 📫 Where to find me
