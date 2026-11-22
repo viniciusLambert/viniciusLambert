@@ -16,7 +16,7 @@ Go · Python · TypeScript · PostgreSQL · Docker · Claude
 
 #### 📚 Books I'm currently reading
 <!-- BOOKS-LIST:START -->
-- [The Dark Side of Skin](https://hardcover.app/books/the-dark-side-of-skin) by Jeferson Tenório (⭐️4.20)
+- [The Dark Side of Skin](https://hardcover.app/books/the-dark-side-of-skin) by Jeferson Tenório (⭐️4.23)
 - [ARQUITETURA DE SOFTWARE: AS PARTES DIFÍCEIS](https://hardcover.app/books/arquitetura-de-software) by Neal Ford (⭐️4.00)
 
 You can also check my [Hardcover profile](https://hardcover.app/@Cambu) for the full list.
